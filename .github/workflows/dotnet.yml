@@ -1,0 +1,24 @@
+name: .NET
+
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Hello message
+      run: echo "Hiii there"
+      
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build DotNet
+    # You may pin to the exact commit or the version.
+    # uses: Elskom/build-dotnet@54d97a0f7d5d5ca946404976db00d27386b09254
+      uses: Elskom/build-dotnet@v1.1.1
+      with:
+        TEST: 1
